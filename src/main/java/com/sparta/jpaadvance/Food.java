@@ -1,9 +1,10 @@
 package com.sparta.jpaadvance;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.Setter;
-import org.springframework.stereotype.Service;
 
+@Getter
 @Setter
 @Entity
 @Table(name = "food")
@@ -14,7 +15,7 @@ public class Food {
     private String name;
     private double price;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "user_id")
     private User user;
 }
