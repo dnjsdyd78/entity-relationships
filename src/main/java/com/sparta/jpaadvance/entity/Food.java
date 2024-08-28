@@ -1,12 +1,12 @@
-package com.sparta.jpaadvance;
+package com.sparta.jpaadvance.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+@Entity
 @Getter
 @Setter
-@Entity
 @Table(name = "food")
 public class Food {
     @Id
@@ -15,7 +15,7 @@ public class Food {
     private String name;
     private double price;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 }
